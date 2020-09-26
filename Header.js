@@ -9,7 +9,7 @@ class Header extends Component {
         <TextInput
           style={styles.input}
           onChangeText={this.props.cambiarTexto}
-          placeholder="Ingresa una nueva tarea"
+          placeholder="Ingresa una nueva tarea..."
           onSubmitEditing={this.props.agregar}
           value={this.props.texto}
         />

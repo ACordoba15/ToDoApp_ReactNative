@@ -30,12 +30,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "row",
-    justifyContent: "space-between",
+    //justifyContent: "space-between",
     paddingHorizontal: 16,
   },
   texto: {
     fontSize: 20,
     flex: 8,
+    textAlign: "left",
   },
   icono: {
     color: "#000000",
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
     width: "90%",
     minHeight: 45,
     alignSelf: "center",
-    justifyContent: "space-between",
+    //justifyContent: "space-between",
     flexDirection: "row",
     borderRadius: 5,
   },
