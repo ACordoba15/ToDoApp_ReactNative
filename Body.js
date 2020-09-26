@@ -1,7 +1,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
 import React, { Component } from "react";
-import { StyleSheet, View, Text, FlatList } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  FlatList,
+  ActivityIndicator,
+} from "react-native";
 import Tarea from "./Tarea";
 
 class Body extends Component {
@@ -13,12 +19,18 @@ class Body extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <FlatList
-          data={this.props.tareas}
-          renderItem={({ item }) => (
-            <Tarea item={item} eliminar={this.props.eliminar} />
-          )}
-        />
+        {this.props.cargando && (
+          <ActivityIndicator size="large" color="#640064" />
+        )}
+
+        {!this.props.cargando && (
+          <FlatList
+            data={this.props.tareas}
+            renderItem={({ item }) => (
+              <Tarea item={item} eliminar={this.props.eliminar} />
+            )}
+          />
+        )}
       </View>
     );
   }

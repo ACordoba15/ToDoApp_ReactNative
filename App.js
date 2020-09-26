@@ -12,6 +12,8 @@ export default class App extends React.Component {
     this.state = {
       tareas: [],
       texto: "",
+      // Al poner la propiedad cargando en false se quita el Activityindicator, mientras sea verdadero se mostrará
+      cargando: true,
     };
   }
 
@@ -64,6 +66,9 @@ export default class App extends React.Component {
       .then((valor) => {
         console.log(valor);
         console.log(JSON.parse(valor));
+        setTimeout(() => {
+          this.setState({ cargando: false });
+        }, 5000);
         if (valor !== null) {
           const nuevasTarea = JSON.parse(valor);
           this.setState({ tareas: nuevasTarea });
@@ -71,6 +76,7 @@ export default class App extends React.Component {
       })
       .catch((error) => {
         console.log(error);
+        this.setState({ cargando: false });
       });
   };
 
@@ -83,7 +89,11 @@ export default class App extends React.Component {
           texto={this.state.texto}
           onSubmitEditing={this.props.agregar}
         />
-        <Body tareas={this.state.tareas} eliminar={this.eliminarTarea} />
+        <Body
+          tareas={this.state.tareas}
+          eliminar={this.eliminarTarea}
+          cargando={this.state.cargando}
+        />
       </View>
     );
   }
