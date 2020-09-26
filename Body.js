@@ -13,7 +13,6 @@ class Body extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text> Body </Text>
         <FlatList
           data={this.props.tareas}
           renderItem={({ item }) => (

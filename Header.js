@@ -1,10 +1,10 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TextInput } from "react-native";
 class Header extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text> Header </Text>
         <TextInput
           style={styles.texto}
           onChangeText={this.props.cambiarTexto}
