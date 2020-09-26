@@ -12,18 +12,14 @@ class Tarea extends Component {
   render() {
     return (
       <View style={styles.listItem}>
+        <Ionicons style={styles.icono} name="ios-arrow-forward" size={20} />
         <Text style={styles.texto}> {this.props.item.texto} </Text>
         <TouchableOpacity
           onPress={() => {
             this.props.eliminar(this.props.item.key);
           }}
         >
-          <Ionicons
-            style={styles.icono}
-            name="md-trash"
-            size={24}
-            color="gray"
-          />
+          <Ionicons style={styles.icono} name="md-trash" size={20} />
         </TouchableOpacity>
       </View>
     );
@@ -38,10 +34,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   texto: {
-    fontSize: 24,
+    fontSize: 20,
+    flex: 8,
   },
   icono: {
-    color: "#fffffff",
+    color: "#000000",
+    flex: 1,
   },
   listItem: {
     margin: 10,
@@ -49,13 +47,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     width: "90%",
     minHeight: 45,
-    flex: 1,
     alignSelf: "center",
     justifyContent: "space-between",
     flexDirection: "row",
     borderRadius: 5,
-    borderWidth: 2,
-    borderColor: "#000000",
   },
 });
 

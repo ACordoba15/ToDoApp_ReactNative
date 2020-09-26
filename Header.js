@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from "react";
-import { StyleSheet, View, TextInput, Dimensions } from "react-native";
-const { width: WIDTH } = Dimensions.get("window");
+import { StyleSheet, View, TextInput } from "react-native";
+
 class Header extends Component {
   render() {
     return (
@@ -20,7 +20,7 @@ class Header extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 2,
+    flex: 3,
     justifyContent: "center",
     backgroundColor: "#FFFFFF",
   },
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     width: "80%",
     height: 45,
     borderRadius: 5,
-    fontSize: 26,
+    fontSize: 18,
     padding: 10,
     backgroundColor: "#FFFFFF",
     color: "#000000",
