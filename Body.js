@@ -2,6 +2,7 @@
 /* eslint-disable no-undef */
 import React, { Component } from "react";
 import { StyleSheet, View, Text, FlatList } from "react-native";
+import Tarea from "./Tarea";
 
 class Body extends Component {
   constructor(props) {
@@ -15,7 +16,9 @@ class Body extends Component {
         <Text> Body </Text>
         <FlatList
           data={this.props.tareas}
-          renderItem={({ item }) => <Text>{item.texto}</Text>}
+          renderItem={({ item }) => (
+            <Tarea item={item} eliminar={this.props.eliminar} />
+          )}
         />
       </View>
     );
@@ -25,7 +28,7 @@ class Body extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 8,
-    backgroundColor: "#003330",
+    backgroundColor: "#98FB98",
   },
 });
 

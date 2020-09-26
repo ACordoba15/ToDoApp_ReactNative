@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React from "react";
@@ -30,6 +31,15 @@ export default class App extends React.Component {
     console.log(this.state.tareas.length);
   };
 
+  eliminarTarea = (id) => {
+    const nuevasTarea = this.state.tareas.filter((tarea) => {
+      return tarea.key !== id;
+    });
+    this.setState({
+      tareas: nuevasTarea,
+    });
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -40,7 +50,7 @@ export default class App extends React.Component {
           onSubmitEditing={this.props.agregar}
         />
         <Text>{this.state.texto}</Text>
-        <Body tareas={this.state.tareas} />
+        <Body tareas={this.state.tareas} eliminar={this.eliminarTarea} />
       </View>
     );
   }
